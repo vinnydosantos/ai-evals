@@ -7,13 +7,14 @@
 
 ## 1. Product Strategy, The Context
 
-- **Target user:** _…_
-- **Key use case:** _…_
-- **Value proposition:** _…_
+- **Target user:** VP-level Strategists and Product Leaders at Fortune 500 companies.
+- **Key use case:** Ask plain-language market intelligence questions and receive clear, source-grounded comparisons and summaries.
+- **Value proposition:** Help enterprise clients find trusted market insights faster to support informed business decisions.
+- **Priority rationale:** Incorrect insights could mislead clients' decisions, so trustworthy information is the priority.
 
 ## 2. Measurements, The Execution
 
-- **User promise.** _For [user], [product] promises to [outcome] so that [business value]._
+- **User promise.** For enterprise strategy and product leaders, Ascend IQ promises clear market insights grounded in verified sources so that they can make informed decisions faster and retain confidence in Ascend Analytics.
 - **Top 3 trust metrics:**
   - **_Metric 1_**, _definition / measurable signal_
   - **_Metric 2_**, _definition / measurable signal_
