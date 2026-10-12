@@ -6,19 +6,53 @@
 
 ## Version A, Concise, system prompt used
 
-_…_
+You are an executive briefing assistant. Summarize in exactly 3 bullet points under 60 words. No preamble, no extra text.
 
 ## Version B, Narrative, system prompt used
 
-_…_
+You are a PR communications assistant. Write a 100-word narrative summary highlighting wins first, then risks and next steps. Keep a positive tone. No bullets.
 
 ## Eval setup, dataset name + judge model/family
 
-_e.g. dataset `Module1Output`, Conciseness LLM-as-a-Judge, judge from a different model family than the generator (avoids self-preference bias)._
+- **Dataset:** `Module1Output` — 20 synthetic email-summary examples; 10 provisional good labels and 10 provisional bad labels.
+- **Generator:** ChatGPT (OpenAI family), used for both prompt versions.
+- **Planned judge:** Claude (Anthropic family), different from the generator family to reduce self-preference bias.
+- **Evaluator:** Conciseness; 1 = concise and faithful, 0 = not.
+- **Status:** Optional cross-family judge scoring has not been run. Version A's previously recorded score of 1 is provisional, not a Claude judge result.
+- **Scope:** This email-summary exercise demonstrates prompt comparison; it is not an evaluation of Ascend IQ's market-intelligence performance.
+- **Human curation:** Pending learner review. The generated labels are a starter set, not a validated golden dataset.
 
 ## Cold-start, the prompt you used to seed a starter dataset
 
-_Paste the prompt you gave ChatGPT to generate ~20 example rows._
+Generate 20 example rows for evaluating email-summary quality. Each row: an input email + a candidate summary + a first-pass label ("good" or "bad") + a one-line reason. Make roughly half concise/faithful ("good") and half verbose or inaccurate ("bad"). Return it as a markdown table.
+
+### Starter dataset
+
+| # | Input email | Candidate summary | First-pass label | One-line reason |
+|---|---|---|---|---|
+| 1 | Social engagement rose 25% month-over-month. Newsletter open rate fell from 42% to 35%. We will test new subject lines next week. | Social engagement rose 25%; newsletter opens fell from 42% to 35%. Subject-line tests begin next week. | good | Concise and preserves the results and next step. |
+| 2 | Revenue reached $1.2M against a $1.5M target. Finance will review the shortfall on Tuesday. | Revenue exceeded its target by $300K. Finance will review results Tuesday. | bad | Reverses the result: revenue missed the target by $300K. |
+| 3 | The product launch moves from October 15 to November 2 because security testing is incomplete. Marketing should pause scheduled launch emails. | Launch postponed to November 2 due to incomplete security testing; Marketing must pause launch emails. | good | Preserves the revised date, blocker, and required action. |
+| 4 | Legal has not approved the vendor contract. Procurement must wait before issuing the purchase order. | Legal approved the vendor contract; Procurement can issue the purchase order. | bad | Reverses approval status and authorizes a prohibited action. |
+| 5 | Yesterday’s outage lasted 18 minutes and affected EU customers. Service is restored. Root-cause analysis is due Friday. | EU service is restored after an 18-minute outage; root-cause analysis is due Friday. | good | Accurately captures impact, recovery, and follow-up deadline. |
+| 6 | We interviewed eight pilot users. Six found onboarding confusing. These findings may not represent our full customer base. | Most customers find onboarding confusing. | bad | Generalizes a small pilot sample and drops the stated limitation. |
+| 7 | Please approve the $8,000 research budget by Thursday so recruiting can begin Monday. | Approval needed by Thursday for an $8,000 research budget to start recruiting Monday. | good | Retains the decision, amount, deadline, and dependency. |
+| 8 | The beta is planned for Monday, provided QA signs off Friday. Two critical defects remain open. | The beta will launch Monday. | bad | Presents a conditional plan as certain and omits critical defects. |
+| 9 | The supplier expects delivery between May 10 and May 12. This is an estimate, not a confirmed date. Operations will confirm tomorrow. | Estimated delivery is May 10–12; Operations will confirm tomorrow. | good | Preserves uncertainty and the confirmation step. |
+| 10 | Customer churn increased from 4% to 6% this quarter. The team is investigating the causes. | Customer churn increased by 2% because support response times worsened. | bad | Confuses percentage points with percent change and invents a cause. |
+| 11 | Effective immediately, stop using pricing sheet v3. Version 4 corrects enterprise pricing errors and is available in the shared folder. | Stop using pricing sheet v3 immediately; use v4 from the shared folder to avoid enterprise pricing errors. | good | Clearly preserves the urgent instruction and replacement source. |
+| 12 | The customer renewed for one year at the existing price. They declined the proposed analytics add-on. | The customer renewed and purchased the analytics add-on. | bad | Invents an add-on purchase that the customer explicitly declined. |
+| 13 | No customer data was exposed in the incident. Internal logs were accessible for 12 minutes. Security closed access and is reviewing controls. | No customer data was exposed; internal logs were accessible for 12 minutes. Access is closed, and Security is reviewing controls. | good | Distinguishes the actual exposure from customer-data impact. |
+| 14 | Friday’s workshop is canceled. Ana will send a replacement date next week. | Regarding the workshop previously scheduled for Friday, the update is that it will no longer take place on that day because it has been canceled. Looking ahead to the coming week, Ana will communicate another update containing the replacement date for the workshop. | bad | Repeats two simple facts with unnecessary wording. |
+| 15 | Support backlog fell from 120 to 75 tickets. Four urgent tickets remain; owners must post recovery plans by 3 p.m. today. | Support backlog fell to 75 from 120; four urgent tickets still require owner recovery plans by 3 p.m. today. | good | Balances progress with the remaining risk and deadline. |
+| 16 | The campaign generated 400 leads. We have not yet measured how many converted into paying customers. | The campaign acquired 400 paying customers. | bad | Incorrectly equates leads with paying customers. |
+| 17 | Correction to my earlier email: the board review is Wednesday at 10 a.m., not Tuesday. The meeting link is unchanged. | Board review is Wednesday at 10 a.m.; the meeting link is unchanged. | good | Uses the corrected schedule and preserves relevant logistics. |
+| 18 | Maya owns the migration plan, due June 8. Leo will review it by June 10. | Leo must complete the migration plan by June 8; Maya will review it June 10. | bad | Swaps the accountable owner and reviewer. |
+| 19 | The pilot reduced average handling time by 15%, but satisfaction scores were unchanged. We recommend extending the pilot before deciding on rollout. | Pilot handling time fell 15%; satisfaction was unchanged. Recommendation: extend the pilot before a rollout decision. | good | Preserves mixed results and distinguishes a recommendation from approval. |
+| 20 | The security audit found three critical vulnerabilities. Release is blocked until all three are fixed and retested. Documentation updates are complete. | Documentation updates are complete, and the release is ready. | bad | Omits critical vulnerabilities and falsely declares release readiness. |
+
+These are **provisional AI-generated labels** for human review, not a validated golden dataset.
+
 
 ## Your definition of good vs bad (golden-set criteria) — the graded part, write your own
 
