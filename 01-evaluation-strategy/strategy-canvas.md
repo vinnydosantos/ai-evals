@@ -23,13 +23,13 @@
 
 ## 3. Strategic Trade-Offs, The Cost
 
-### Trade-off 1 · _Metric A ↔ Metric B_
+### Trade-off 1 · Factual reliability ↔ Latency
 
-_We prioritize A over B because … (business justification)._
+We prioritize factual reliability over response speed because incorrect insights could mislead clients' business decisions. We accept longer response times when source verification is needed to avoid giving clients unreliable guidance.
 
-### Trade-off 2 · _Metric C ↔ Metric D_
+### Trade-off 2 · Robustness ↔ Answer coverage
 
-_We prioritize C over D because … (business justification)._
+We prioritize robustness over answer coverage because a confident answer without sufficient evidence could mislead clients' decisions. We accept clarification requests or unanswered questions when evidence is insufficient, rather than providing unreliable guidance.
 
 ---
 _Generated from the AI Evaluation Strategy Canvas, M1 lab tool, AI Evals Certification._
