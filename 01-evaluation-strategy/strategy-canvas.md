@@ -16,10 +16,10 @@
 
 - **User promise.** For enterprise strategy and product leaders, Ascend IQ promises clear market insights grounded in verified sources so that they can make informed decisions faster and retain confidence in Ascend Analytics.
 - **Top 3 trust metrics:**
-  - **_Metric 1_**, _definition / measurable signal_
-  - **_Metric 2_**, _definition / measurable signal_
-  - **_Metric 3_**, _definition / measurable signal_
-- **Why these three:** _…_
+  - **Hallucination Rate**, percentage of evaluated responses containing at least one false or fabricated factual claim, checked against verified sources. Protects clients from misleading business decisions.
+  - **Robustness**, percentage of ambiguous, misleading, or out-of-scope test queries handled correctly through a grounded answer, clarification, or explicit limitation. Prevents confident answers when evidence is insufficient.
+  - **Latency**, P95 elapsed time from submitting a query to receiving a complete response. Ensures trusted insights arrive quickly enough to improve the research experience.
+- **Why these three:** Clients need reliable insights to avoid misguided decisions, appropriate handling of uncertain questions, and fast answers that reduce research time.
 
 ## 3. Strategic Trade-Offs, The Cost
 
