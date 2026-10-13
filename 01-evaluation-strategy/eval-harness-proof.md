@@ -101,4 +101,8 @@ Social media engagement climbed 25% month-over-month, driven by the new content 
 
 ### Comparison status
 
-Both outputs are captured as evidence. Learner's winner selection and starter-label review are pending. Optional Claude judge scoring has not been run.
+**Selected winner: Version A**, chosen by the learner for the CEO briefing. Its scannable bullets fit the learner's stated rationale: a busy CEO handles many topics and needs timely information to make sound decisions. Version B is more narrative and polished, but less efficient for that purpose.
+
+**Learner review note — row 14:** Keep the original candidate and its bad label. The learner identified redundancy: the summary is factually correct but unnecessarily repetitive for a busy CEO. Preserve it as a verbosity failure example.
+
+**Remaining review:** Explicit confirmation of the other 19 starter labels is pending. Optional Claude judge scoring has not been run.
