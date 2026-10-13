@@ -20,7 +20,7 @@ You are a PR communications assistant. Write a 100-word narrative summary highli
 - **Evaluator:** Conciseness; 1 = concise and faithful, 0 = not.
 - **Status:** Optional cross-family judge scoring has not been run. Version A's previously recorded score of 1 is provisional, not a Claude judge result.
 - **Scope:** This email-summary exercise demonstrates prompt comparison; it is not an evaluation of Ascend IQ's market-intelligence performance.
-- **Human curation:** Pending learner review. The generated labels are a starter set, not a validated golden dataset.
+- **Human curation:** The learner accepted all 20 labels as a batch based on AI-assisted assessment against the learner's rubric, and specifically discussed row 14's redundancy. This was not an individual human review of every row. The dataset remains a starter set, not a fully validated golden dataset.
 
 ## Cold-start, the prompt you used to seed a starter dataset
 
@@ -51,7 +51,7 @@ Generate 20 example rows for evaluating email-summary quality. Each row: an inpu
 | 19 | The pilot reduced average handling time by 15%, but satisfaction scores were unchanged. We recommend extending the pilot before deciding on rollout. | Pilot handling time fell 15%; satisfaction was unchanged. Recommendation: extend the pilot before a rollout decision. | good | Preserves mixed results and distinguishes a recommendation from approval. |
 | 20 | The security audit found three critical vulnerabilities. Release is blocked until all three are fixed and retested. Documentation updates are complete. | Documentation updates are complete, and the release is ready. | bad | Omits critical vulnerabilities and falsely declares release readiness. |
 
-These are **provisional AI-generated labels** for human review, not a validated golden dataset.
+These are **AI-generated first-pass labels accepted by the learner as a batch with AI assistance**. Row 14 was specifically discussed. This starter set is not a fully validated golden dataset.
 
 
 ## Your definition of good vs bad (golden-set criteria) — the graded part, write your own
@@ -66,7 +66,7 @@ These are **provisional AI-generated labels** for human review, not a validated 
 
 **Format:** Exactly three bullets and fewer than 60 words are Version A instruction-compliance checks, not universal requirements for every starter example. Quality is judged by usefulness for the CEO as well as fidelity and conciseness.
 
-**Scoring:** 1 = concise and faithful, preserving decision-critical information; 0 = fails one or more of those criteria. Human review of the starter labels is still pending.
+**Scoring:** 1 = concise and faithful, preserving decision-critical information; 0 = fails one or more of those criteria. The learner accepted the starter labels as a batch with AI assistance; individual human review and full golden-set validation have not been performed.
 
 ## Screenshots, links or repo paths (optional if you followed the demo)
 
@@ -105,4 +105,8 @@ Social media engagement climbed 25% month-over-month, driven by the new content 
 
 **Learner review note — row 14:** Keep the original candidate and its bad label. The learner identified redundancy: the summary is factually correct but unnecessarily repetitive for a busy CEO. Preserve it as a verbosity failure example.
 
-**Remaining review:** Explicit confirmation of the other 19 starter labels is pending. Optional Claude judge scoring has not been run.
+**Dataset acceptance:** The learner accepted the recommendation to keep all 20 labels as a batch based on AI-assisted assessment. Row 14 was specifically discussed and retained as bad for redundancy. No claim is made that the learner reviewed each remaining row individually.
+
+**Judge status:** Optional Claude judge scoring has not been run. The provisional score of 1 for Version A is not a cross-family judge result.
+
+**Module 1 evidence:** Two prompt versions, their captured outputs, the starter dataset, the learner's quality criteria, and the learner's winner selection are recorded. This exercise does not establish Ascend IQ's release readiness.
