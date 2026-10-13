@@ -56,8 +56,49 @@ These are **provisional AI-generated labels** for human review, not a validated 
 
 ## Your definition of good vs bad (golden-set criteria) — the graded part, write your own
 
-_What makes a summary genuinely good or bad for THIS product? This is the judgment call that's yours — don't copy the example._
+**Quality bar: Decision-ready CEO summaries.**
+
+**My rationale:** The CEO is busy and handles many topics every day. They must be well and timely informed to make the right decisions.
+
+**Good:** A summary is concise, faithful to the email, and easy to scan. It preserves decision-relevant results, risks, blockers, actions, and deadlines, including important uncertainty. It avoids repetition and unnecessary detail.
+
+**Bad:** A summary invents or distorts facts, numbers, dates, owners, or approval status; omits decision-critical risks or actions; turns uncertainty into certainty; or uses unnecessary wording that makes the CEO work harder to find the main point.
+
+**Format:** Exactly three bullets and fewer than 60 words are Version A instruction-compliance checks, not universal requirements for every starter example. Quality is judged by usefulness for the CEO as well as fidelity and conciseness.
+
+**Scoring:** 1 = concise and faithful, preserving decision-critical information; 0 = fails one or more of those criteria. Human review of the starter labels is still pending.
 
 ## Screenshots, links or repo paths (optional if you followed the demo)
 
-_2 shots: (1) eval setup (dataset + judge), (2) starter rows. Image links, or paths under `01-evaluation-strategy/screenshots/`._
+The following outputs were generated in this ChatGPT conversation using the same Q4 email. Instructions were supplied as chat messages, rather than through a separate system-prompt field. No API key or notebook was used.
+
+### Input email
+
+Subject: Q4 Marketing Campaign Update
+
+Hi team,
+
+Social media engagement is up 25% month-over-month due to the new content calendar and paid ad experiments.
+
+Newsletter open rate dropped from 42% to 35%; we'll test new subject lines next week.
+
+The product video campaign is delayed until November, pending legal approval; creative assets are ready.
+
+Please ensure all campaign tracking links are added by Friday.
+
+Best,
+Priya
+
+### Captured output A
+
+- Social engagement increased 25% month-over-month, driven by the new content calendar and paid ad experiments.
+- Newsletter open rate dropped from 42% to 35%; subject-line tests begin next week.
+- Product video campaign delayed until November pending legal approval; creative assets are ready. All campaign tracking links are due Friday.
+
+### Captured output B
+
+Social media engagement climbed 25% month-over-month, driven by the new content calendar and paid advertising experiments. Creative assets for the product video campaign are also ready, positioning the team to proceed once legal approval arrives. The campaign is now delayed until November, making legal clearance a key dependency. Meanwhile, newsletter open rates declined from 42% to 35%, presenting an opportunity to improve audience engagement through new subject lines next week. To support campaign measurement, all tracking links must be added by Friday. The immediate priorities are testing newsletter improvements, securing legal approval, and completing tracking setup while sustaining social momentum.
+
+### Comparison status
+
+Both outputs are captured as evidence. Learner's winner selection and starter-label review are pending. Optional Claude judge scoring has not been run.
