@@ -1,26 +1,33 @@
-# Lab 2, Ascend IQ Budget Crisis
-
-> Repo file `ai-evals/05-scale/lab-2-budget-crisis.md`. Allocate Level 1/2/3 coverage across the 5 failure modes under the **$200K/quarter cap** with **max 3 at Level 3**.
->
-> Fill this with the **Budget Crisis Tool**, then **Copy markdown** and paste it over this file. The headings below mirror the tool's output exactly.
+# Module 5 · Eval Budget · Ascend IQ
 
 **Quarterly budget cap:** $200,000
-**Total Level 3 spend:** _$… (… of max 3 L3 slots used)_
+**Online eval spend:** $85,000 (1 of at most 3 online evals)
 
-## Portfolio decision grid
+## Budget
 
 | Failure | Trust metric | Risk | Level | Cost |
-|---|---|---|---|---|
-| Data Fabrication | Hallucination Rate | P0 | _L1 / L2 / L3_ | _$…_ |
-| Context Specificity | UX Trust | P1 | _L1 / L2 / L3_ | _$…_ |
-| Source Attribution Failure | Robustness | P1 | _L1 / L2 / L3_ | _$…_ |
-| Data Bias | Fairness | P2 | _L1 / L2 / L3_ | _$…_ |
-| Cost Overruns | Latency | P3 | _L1 / L2 / L3_ | _$…_ |
+| --- | --- | :---: | :---: | ---: |
+| Data Fabrication | Hallucination Rate | P0 | Online eval | $85,000 |
+| Context Specificity | Robustness | P1 | Periodic audit | $7,000 |
+| Overconfident Tone | UX Trust | P1 | Periodic audit | $6,500 |
+| Data Bias | Fairness | P2 | Periodic audit | $5,500 |
+| Slow Answers | Latency | P3 | Code-based check | $1,250 |
 
-_Reference L3 costs: Hallucination $85K · Context $70K · Attribution $65K · Bias $55K · Latency $25K. L2 ≈ 10% of L3, L1 ≈ 5% of L3._
+## Downgrades
 
-## Fallback methods (non-Level 3 items)
+### Periodic audit · Context Specificity (Robustness · P1)
+- **Cheaper check:** eekly human review of live answers against the exact request, sampling queries with constraints such as “negative reviews only
+- **Why it’s enough:** Human review can detect missed intent that simple rules overlook, at 10% of the online cost. We accept the delay between audits temporarily and reconsider online coverage if repeated or decision-critical failures appear.
 
-### L_n_ · _Failure name_ (_metric_ · _risk_)
-- **Method:** _the cheaper fallback you'll run instead of L3_
-- **Why this fallback is defensible:** _the story you could defend in a customer incident review — especially if you downgraded a P0/P1._
+### Periodic audit · Overconfident Tone (UX Trust · P1)
+- **Cheaper check:** Weekly human review comparing claims with their sources, flagging guesses presented as facts or omitted uncertainty.
+- **Why it’s enough:** Source-based review can assess whether confidence is justified; keyword checks cannot. This accepts a detection delay to preserve budget for higher-impact risks. Escalate to online evaluation if repeated failures influence client decisions.
+
+### Periodic audit · Data Bias (Fairness · P2)
+- **Cheaper check:** Weekly human review of a sample balanced across US and APAC queries, comparing source coverage and omitted regional findings.
+- **Why it’s enough:** A regional audit can detect systematic US favoritism at 10% of the online cost. We accept the detection delay for this P2 risk and escalate if APAC quality repeatedly falls below US quality or clients report material omissions.
+
+### Code-based check · Slow Answers (Latency · P3)
+- **Cheaper check:** Before every release, time a fixed set of long, multi-step queries and flag responses exceeding 10 seconds.
+- **Why it’s enough:** Latency is directly measurable without an LLM judge. This cheaply catches release regressions; we accept that release-only testing can miss production slowdowns.
+
