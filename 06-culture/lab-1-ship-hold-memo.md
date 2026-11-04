@@ -1,47 +1,21 @@
-# Ship/Hold Memo · Ascend IQ
+# Ship-or-Hold Memo · Ascend IQ
 
-> Repo file `ai-evals/06-culture/lab-1-ship-hold-memo.md`. A Pyramid-Principle executive memo: the recommendation comes **first**.
->
-> Fill this with the **Ship/Hold Memo Builder**, then **Copy markdown** and paste it over this file. The headings below mirror the tool's output exactly.
-
-> **Decision:** 🚀 SHIP _(or 🛑 HOLD)_
-
-**To:** _[CPO] · cc Eng Lead · Trust & Safety_
-**From:** _[Your Name] · AI Evals Cohort · [Date]_
+> **Decision:** HOLD
 
 ## The Answer
 
-_First sentence = the recommendation and the business reason. Do not bury it._
+I recommend holding Ascend IQ’s enterprise launch because our evals identified critical integration misrepresentations, and we have not yet demonstrated that the release candidate fixes them and passes the required Hard gate.
 
 ## The Arguments
 
-### 1. _Argument pillar title_
+### 1. Critical misinformation puts enterprise purchasing decisions and client trust at risk.
 
-_…_
+Evidence: The taxonomy identifies 3 P0 failure modes. Their shared #HALLUCINATION tag appears in 10/20 audited answers (50%); this is the tag’s frequency, not each individual failure’s frequency.
 
-### 2. _Argument pillar title_
+### 2. Detecting failures does not demonstrate that the product has fixed them.
 
-_…_
-
-### 3. _Argument pillar title_
-
-_…_
-
-## Evidence · Trust Metrics
-
-```
-- Metric: result (Gate: bar) PASS/FAIL · Source
-- … cite exact numbers from M2–M5 (hallucination rate vs gate, factual grounding %, bias coverage %, p95 latency)
-```
-
-## Business Risk
-
-_Quantified SHIP-path vs HOLD-path risk (revenue, churn, competitive window)._
+Evidence: The judge caught 2/2 integration-misrepresentation cases, while each rule caught 1/2. The release candidate’s post-fix failure rate is not measured yet.
 
 ## Next Step · Decision Needed
 
-_A specific decision request with a deadline — e.g. "Approve the Hold rollback by Friday to keep the Q3 launch window."_
-
-## Reflection
-
-_What defining "good enough" forced you to confront._
+Please approve holding the enterprise launch and dedicating the next sprint to fixing the P0 failures and validating the release candidate against our Hard gates. Approve this before next sprint planning; reconsider launch once the fixes and passing gate results are documented.
